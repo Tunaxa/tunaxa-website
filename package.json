@@ -10,29 +10,18 @@
   },
   "dependencies": {
     "next": "16.3.3",
-<<<<<<< HEAD
-    "postcss": "^8.5.26",
-=======
->>>>>>> origin/Youssef
+    "postcss": "^8.5.2",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@tailwindcss/postcss": "^4.3.3",
-=======
     "@tailwindcss/postcss": "^4",
->>>>>>> origin/Youssef
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.3",
-<<<<<<< HEAD
-    "tailwindcss": "^4.3.3",
-=======
     "tailwindcss": "^4",
->>>>>>> origin/Youssef
     "typescript": "^5"
   }
 }

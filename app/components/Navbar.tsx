@@ -19,27 +19,33 @@ export default function Navbar() {
           <span>TUNAXA</span>
         </Link>
 
-        <div className="hidden md:flex  items-center gap-8 text-lg font-mono text-neutral-400">
+        <div className="hidden md:flex items-center gap-8 text-lg font-mono text-neutral-400">
           <Link
-            href="#work"
+            href="/#work"
             className="hover:text-black hover:underline underline-offset-1 transition-colors"
           >
             Work
           </Link>
           <Link
-            href="#services"
+            href="/services"
             className="hover:text-black hover:underline underline-offset-1 transition-colors"
           >
             Services
           </Link>
           <Link
-            href="#stack"
+            href="/our-products"
+            className="hover:text-black hover:underline underline-offset-1 transition-colors"
+          >
+            Products
+          </Link>
+          <Link
+            href="/#stack"
             className="hover:text-black hover:underline underline-offset-1 transition-colors"
           >
             Tech Stack
           </Link>
           <Link
-            href="#about"
+            href="/#about"
             className="hover:text-black hover:underline underline-offset-1 transition-colors"
           >
             About
