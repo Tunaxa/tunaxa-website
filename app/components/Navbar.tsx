@@ -10,6 +10,7 @@ import PixelIndicator from "./ui/PixelIndicator";
 const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Products", href: "/our-products" },
+  {name : "Pricing", href: "#about"},
   { name: "About", href: "/about" },
 ];
 

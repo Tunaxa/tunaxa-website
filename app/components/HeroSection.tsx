@@ -39,7 +39,7 @@ export default function HeroSection() {
           {/* System Badge */}
           <div className="inline-flex items-center gap-3 px-3.5 py-1.5 border border-[#bfdbfe] bg-[#eff6ff] text-[#2563eb] text-xs font-mono font-semibold uppercase tracking-wider">
             <PixelIndicator />
-            <span>TUNAXA V2.0 / ENTERPRISE BLUEPRINT</span>
+            <span>TUNAXA / ENTERPRISE BLUEPRINT</span>
           </div>
 
           {/* High-Stakes Headline */}

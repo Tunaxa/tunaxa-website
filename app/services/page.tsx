@@ -115,9 +115,9 @@ export default function ServicesPage() {
       <div className="relative z-10 max-w-360 mx-auto px-4 sm:px-6 md:px-12 pt-28 pb-20">
         {/* ONE PAGE-LEVEL CARD WRAPPING EVERYTHING */}
         <div className="relative border border-[#d1d1d1] bg-[#f7f7f7] shadow-xs">
-          <CornerBrackets />
+          
 
-          <PixelDivider className="my-0 border-t-0" />
+          
 
           {/* SERVICES — static stacked content */}
           {services.map((service, idx) => (
