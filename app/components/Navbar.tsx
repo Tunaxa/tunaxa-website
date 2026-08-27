@@ -1,149 +1,216 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Card from "./ui/card"
+import { usePathname } from "next/navigation";
+
+// Corner Cross Decorator Component matching our-products
+function CornerBrackets({ className = "text-black" }: { className?: string }) {
+  return (
+    <>
+      {/* Top Left */}
+      <div className={`absolute top-0 left-0 w-3 h-3 pointer-events-none z-10 ${className}`}>
+        <div className="absolute top-0 left-0 w-3 h-[1.5px] bg-current" />
+        <div className="absolute top-0 left-0 w-[1.5px] h-3 bg-current" />
+      </div>
+      {/* Top Right */}
+      <div className={`absolute top-0 right-0 w-3 h-3 pointer-events-none z-10 ${className}`}>
+        <div className="absolute top-0 right-0 w-3 h-[1.5px] bg-current" />
+        <div className="absolute top-0 right-0 w-[1.5px] h-3 bg-current" />
+      </div>
+      {/* Bottom Right */}
+      <div className={`absolute bottom-0 right-0 w-3 h-3 pointer-events-none z-10 ${className}`}>
+        <div className="absolute bottom-0 right-0 w-3 h-[1.5px] bg-current" />
+        <div className="absolute bottom-0 right-0 w-[1.5px] h-3 bg-current" />
+      </div>
+      {/* Bottom Left */}
+      <div className={`absolute bottom-0 left-0 w-3 h-3 pointer-events-none z-10 ${className}`}>
+        <div className="absolute bottom-0 left-0 w-3 h-[1.5px] bg-current" />
+        <div className="absolute bottom-0 left-0 w-[1.5px] h-3 bg-current" />
+      </div>
+    </>
+  );
+}
+
+// 4-Pixel Category Indicator
+function PixelIndicator() {
+  return (
+    <div className="grid grid-cols-2 gap-0.5 w-3 h-3 shrink-0">
+      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-100 animate-pulse" />
+      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-30" />
+      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-60" />
+      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-90" />
+    </div>
+  );
+}
+
+const navLinks = [
+  { name: "Services", href: "/services" },
+  { name: "Our Products", href: "/our-products" },
+  { name: "Work", href: "/#work" },
+  { name: "About", href: "/#about" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="fixed left-0 right-0 z-50 flex justify-center m-2">
-      <nav className="flex flex-col w-full max-w-8xl p-6 bg-[]/80 backdrop-blur-md border-b-2 text-neutral-200">
-        <div className="flex items-center justify-evenly md:justify-evenly w-full">
-          <Link
-            href="/"
-            className="flex items-center gap-2 font-bold tracking-wider text-foreground text-2xl"
-          >
-            <Image
-              src="/logo.png"
-              alt="Evolt Logo"
-              width={100}
-              height={100}
-              className="w-11 bg-black h-11 object-contain rounded-md transition-transform group-hover:scale-105"
-            />
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 md:px-1 pt-1">
+      <div className="relative mx-auto w-full border border-[#d1d1d1] bg-white backdrop-blur-md transition-all duration-200">
+        <CornerBrackets />
 
-            <span>TUNAXA</span>
-          </Link>
-
-        <div className="hidden md:flex  items-center gap-8 text-lg font-mono text-neutral-400">
-          <Link
-            href="#work"
-            className="hover:text-black hover:underline underline-offset-1 transition-colors"
-          >
-            Work
-          </Link>
-          <Link
-            href="#services"
-            className="hover:text-black hover:underline underline-offset-1 transition-colors"
-          >
-            Services
-          </Link>
-          <Link
-            href="#stack"
-            className="hover:text-black hover:underline underline-offset-1 transition-colors"
-          >
-            Tech Stack
-          </Link>
-          <Link
-            href="#about"
-            className="hover:text-black hover:underline underline-offset-1 transition-colors"
-          >
-            About
-          </Link>
-        </div>
-
-          <div className="hidden md:flex">
+        <nav className="px-4 py-3 sm:px-6 sm:py-3.5">
+          <div className="flex items-center justify-evenly">
+            {/* Brand / Logo */}
             <Link
-              href="#contact"
-              className="flex items-center font-mono gap-1.5 px-4 py-2 text-sm font-medium rounded-full border border-neutral-700 bg-black text-white hover:bg-white hover:text-black transition-colors duration-200"
+              href="/"
+              className="group flex items-center gap-3 font-sans"
             >
-              Let&apos;s chat
+              <div className=" flex items-center justify-center p-1.5 transition-colors">
+                <Image
+                  src="/black-logo.png"
+                  alt="Tunaxa Logo"
+                  width={50}
+                  height={50}
+                  className="object-contain w-10 h-10"
+                />
+              </div>
+              <span className="font-extrabold text-xl sm:text-2xl tracking-wider text-black">
+                TUNAXA
+              </span>
             </Link>
+
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex items-center gap-8 font-mono text-xs sm:text-sm uppercase tracking-wider">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={`group relative flex items-center gap-1.5 py-1 font-medium transition-colors ${
+                      isActive
+                        ? "text-black font-bold"
+                        : "text-neutral-600 hover:text-black"
+                    }`}
+                  >
+                    {isActive && <PixelIndicator />}
+                    <span>{link.name}</span>
+                    <span
+                      className={`absolute bottom-0 left-0 h-0.5 bg-[#3b82f6] transition-all duration-200 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* CTA Button */}
+            <div className="hidden md:flex items-center">
+              <Link
+                href="/#contact"
+                className="group relative inline-flex items-center justify-between gap-3 px-5 py-2.5 border border-black bg-transparent text-black text-xs font-mono font-medium uppercase tracking-wider transition-all duration-200 hover:bg-black hover:text-white"
+                style={{
+                  clipPath:
+                    "polygon(6px 0%, 100% 0%, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0% 100%, 0% 6px)",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <PixelIndicator />
+                  <span>Let&apos;s chat</span>
+                </div>
+                <span className="transform group-hover:translate-x-1 transition-transform duration-200 text-[#3b82f6] group-hover:text-white font-mono">
+                  →
+                </span>
+              </Link>
+            </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden relative w-9 h-9 bg-white flex items-center justify-center text-black hover:bg-neutral-100 transition-colors focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-neutral-200 hover:text-black focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-7 h-7"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
+          {/* Mobile Menu Dropdown */}
+          {isOpen && (
+            <div className="md:hidden mt-4 pt-4 border-t border-[#d1d1d1] flex flex-col gap-3 font-mono text-sm tracking-wider uppercase">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center justify-between py-2 px-3 border border-transparent transition-all ${
+                      isActive
+                        ? "border-[#d1d1d1] bg-white text-black font-bold"
+                        : "text-neutral-600 hover:text-black hover:bg-white/50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      {isActive ? (
+                        <PixelIndicator />
+                      ) : (
+                        <span className="w-1.5 h-1.5 bg-neutral-300 rounded-full" />
+                      )}
+                      <span>{link.name}</span>
+                    </div>
+                    <span className="text-xs text-[#3b82f6]">→</span>
+                  </Link>
+                );
+              })}
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden flex flex-col items-center gap-6 pt-6 text-lg font-mono text-neutral-400">
-            <Link
-              href="#work"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-black hover:underline underline-offset-1 transition-colors"
-            >
-              Work
-            </Link>
-            <Link
-              href="#services"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-black hover:underline underline-offset-1 transition-colors"
-            >
-              Services
-            </Link>
-            <Link
-              href="#stack"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-black hover:underline underline-offset-1 transition-colors"
-            >
-              Tech Stack
-            </Link>
-            <Link
-              href="#about"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-black hover:underline underline-offset-1 transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center font-mono gap-1.5 px-4 py-2 text-sm font-medium rounded-full border border-neutral-700 bg-black text-white hover:bg-white hover:text-black transition-colors duration-200 mt-2"
-            >
-              Let&apos;s chat
-            </Link>
-          </div>
-        )}
-      </nav>
-
-      <div>
-        <Card
-            title={"hey"}
-            description={"yyyoooo"}
-        >
-            
-        </Card>
+              <div className="pt-2">
+                <Link
+                  href="/#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="group relative flex items-center justify-between px-5 py-3 border border-black bg-transparent text-black text-xs font-mono font-medium uppercase tracking-wider transition-all duration-200 hover:bg-black hover:text-white w-full"
+                  style={{
+                    clipPath:
+                      "polygon(6px 0%, 100% 0%, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0% 100%, 0% 6px)",
+                  }}
+                >
+                  <div className="flex items-center gap-2">
+                    <PixelIndicator />
+                    <span>Let&apos;s chat</span>
+                  </div>
+                  <span className="text-[#3b82f6] group-hover:text-white font-mono">
+                    →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          )}
+        </nav>
       </div>
     </header>
   );
