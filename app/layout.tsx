@@ -8,8 +8,9 @@ const monoSans = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Evolt Clone",
-  description: "High-stakes engineering navbar clone",
+  title: "Tunaxa | Enterprise Software Ecosystem & Custom Engineering",
+  description:
+    "Unified high-performance software tools, custom engineering, and enterprise solutions built for modern fast-moving teams.",
 };
 
 export default function RootLayout({
@@ -18,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`dark ${monoSans.variable}`}>
-      <body className="font-mono bg-[#0a0a0a] text-white antialiased min-h-screen">
+    <html lang="en" className={monoSans.variable}>
+      <body className="font-mono bg-[#f7f7f7] text-[#171717] antialiased min-h-screen selection:bg-[#3b82f6] selection:text-white">
         <Navbar />
         <main>{children}</main>
       </body>
