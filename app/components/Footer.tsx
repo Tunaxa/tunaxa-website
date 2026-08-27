@@ -112,27 +112,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-neutral-600 font-sans">
               <li>
-                <Link href="/our-products#axa-workspace" className="hover:text-black hover:underline transition-colors">
+                <Link href="/our-products/axa-workspace" className="hover:text-black hover:underline transition-colors">
                   Axa Workspace
                 </Link>
               </li>
               <li>
-                <Link href="/our-products#axa-crm" className="hover:text-black hover:underline transition-colors">
+                <Link href="/our-products/axa-crm" className="hover:text-black hover:underline transition-colors">
                   Axa CRM
                 </Link>
               </li>
               <li>
-                <Link href="/our-products#axa-pass" className="hover:text-black hover:underline transition-colors">
+                <Link href="/our-products/axa-pass" className="hover:text-black hover:underline transition-colors">
                   Axa Pass
                 </Link>
               </li>
               <li>
-                <Link href="/our-products#axa-sign" className="hover:text-black hover:underline transition-colors">
+                <Link href="/our-products/axa-sign" className="hover:text-black hover:underline transition-colors">
                   Axa Sign
                 </Link>
               </li>
               <li>
-                <Link href="/our-products#axa-book" className="hover:text-black hover:underline transition-colors">
+                <Link href="/our-products/axa-book" className="hover:text-black hover:underline transition-colors">
                   Axa Book
                 </Link>
               </li>

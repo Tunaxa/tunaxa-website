@@ -13,6 +13,7 @@ const products = [
     tag: "/COLLABORATION SUITE",
     title: "AXA WORKSPACE",
     subtitle: "Team collaboration, docs, and communication",
+    priceTeaser: "From $3/seat (50% CRM Bundle) | $30/mo",
     description:
       "Your company’s central command center. Axa Workspace combines real-time documents, team chat, task management, and file storage into one seamless interface. Built to eliminate tab-switching fatigue and keep async teams fully synchronized.",
     features: [
@@ -20,7 +21,7 @@ const products = [
       "Team Chat & Async Channels",
       "Task Management & Cloud Storage",
     ],
-    link: "#axa-workspace",
+    link: "/our-products/axa-workspace",
     image: "/axaworkspace.svg",
     alt: "Axa Workspace Preview",
   },
@@ -29,6 +30,7 @@ const products = [
     tag: "/SALES & PIPELINE",
     title: "AXA CRM",
     subtitle: "Customer relationship & sales pipeline management",
+    priceTeaser: "Simple, honest plans from $85/mo",
     description:
       "Intelligent sales pipeline and contact management. Gives your team end-to-end visibility over deals, contact histories, automated follow-ups, and sales metrics, helping move leads faster with custom pipelines and revenue forecasts.",
     features: [
@@ -36,7 +38,7 @@ const products = [
       "Automated Follow-ups & Reminders",
       "Revenue Forecasts & Analytics",
     ],
-    link: "#axa-crm",
+    link: "/our-products/axa-crm",
     image: "/axacrm.svg",
     alt: "Axa CRM Preview",
   },
@@ -45,6 +47,7 @@ const products = [
     tag: "/CREDENTIAL SECURITY",
     title: "AXA PASS",
     subtitle: "Secure password management",
+    priceTeaser: "From $1.50/seat (50% CRM Bundle) | $3/seat standalone",
     description:
       "Enterprise-grade security for credentials. Provides encrypted, role-based password sharing, secure note storage, and credential rotation, keeping company data safe while granting controlled team access.",
     features: [
@@ -52,7 +55,7 @@ const products = [
       "Role-Based Password Sharing",
       "Automated Credential Rotation",
     ],
-    link: "#axa-pass",
+    link: "/our-products/axa-pass",
     image: "/axapass.svg",
     alt: "Axa Pass Preview",
   },
@@ -61,6 +64,7 @@ const products = [
     tag: "/DIGITAL CONTRACTS",
     title: "AXA SIGN",
     subtitle: "Digital signature & contract platform",
+    priceTeaser: "From $4/seat (50% CRM Bundle) | Unlimited envelopes",
     description:
       "Legally binding digital signatures and contracts. Features audit-trailed e-signatures, custom document templates, and real-time status tracking to close deals and execute agreements faster.",
     features: [
@@ -68,7 +72,7 @@ const products = [
       "Audit-Trailed Verification",
       "Custom Document Templates",
     ],
-    link: "#axa-sign",
+    link: "/our-products/axa-sign",
     image: "/axasign.svg",
     alt: "Axa Sign Preview",
   },
@@ -77,6 +81,7 @@ const products = [
     tag: "/CALENDAR & SCHEDULING",
     title: "AXA BOOK",
     subtitle: "Calendar scheduling & appointment booking",
+    priceTeaser: "From $3/seat (50% CRM Bundle) | Round-robin routing",
     description:
       "Automated scheduling and calendar management. Syncs directly with team calendars to offer custom booking links, automated email/SMS reminders, intake forms, and payment collection.",
     features: [
@@ -84,7 +89,7 @@ const products = [
       "Automated Email & SMS Reminders",
       "Intake Forms & Payment Collection",
     ],
-    link: "#axa-book",
+    link: "/our-products/axa-book",
     image: "/axabook.svg",
     alt: "Axa Book Preview",
   },
@@ -150,9 +155,15 @@ export default function OurProductsPage() {
                   </p>
 
                   {/* Full Description */}
-                  <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed mb-6">
+                  <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed mb-4">
                     {product.description}
                   </p>
+
+                  {/* Price Teaser Callout */}
+                  <div className="mb-6 p-2.5 border border-[#3b82f6]/30 bg-blue-50/50 flex items-center justify-between text-xs font-mono">
+                    <span className="text-neutral-600 font-medium">Pricing:</span>
+                    <span className="font-bold text-[#2563eb]">{product.priceTeaser}</span>
+                  </div>
 
                   {/* Features Card with Corner Crosses */}
                   <div className="relative border border-[#d1d1d1] bg-white p-5 mb-8 shadow-xs">
@@ -178,21 +189,23 @@ export default function OurProductsPage() {
                 <div className="pt-2">
                   <Link
                     href={product.link}
-                    className="group relative inline-flex items-center justify-between gap-4 px-6 py-3 border border-black bg-transparent text-black text-sm font-medium transition-all duration-200 hover:bg-black hover:text-white w-full sm:w-auto"
+                    className="group relative inline-flex items-center justify-between gap-4 px-6 py-3.5 border border-black bg-black text-white text-sm font-medium transition-all duration-200 hover:bg-neutral-800 w-full"
                     style={{
                       clipPath: "polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px)",
                     }}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 relative shrink-0 text-[#2563eb] group-hover:text-white transition-colors duration-200 flex items-center justify-center">
+                      <div className="w-5 h-5 relative shrink-0 text-[#3b82f6] group-hover:text-white transition-colors duration-200 flex items-center justify-center">
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M5 12h14" />
                           <path d="m12 5 7 7-7 7" />
                         </svg>
                       </div>
-                      <span className="tracking-wide">Explore {product.title}</span>
+                      <span className="tracking-wide font-mono text-xs uppercase font-bold">
+                        Explore {product.title} & Pricing
+                      </span>
                     </div>
-                    <span className="transform group-hover:translate-x-1 transition-transform duration-200 text-[#3b82f6] group-hover:text-white font-mono">
+                    <span className="transform group-hover:translate-x-1 transition-transform duration-200 text-[#3b82f6] group-hover:text-white font-mono font-bold">
                       →
                     </span>
                   </Link>
