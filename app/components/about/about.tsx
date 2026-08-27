@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { CornerBrackets } from "../ui/card";
 
@@ -20,30 +21,35 @@ const products = [
     name: "AXA WORKSPACE",
     tag: "/ COMMAND CENTER",
     desc: "Real-time documents, team chat, task boards, and file storage in one unified interface.",
+    image: "/axaworkspace.svg",
   },
   {
     id: "axa-crm",
     name: "AXA CRM",
     tag: "/ REVENUE ENGINE",
     desc: "End-to-end sales pipelines, automated follow-ups, and custom conversion analytics.",
+    image: "/axacrm.svg",
   },
   {
     id: "axa-pass",
     name: "AXA PASS",
     tag: "/ ZERO-KNOWLEDGE",
     desc: "Enterprise credential vaults, role-based sharing, and automated credential rotation.",
+    image: "/axapass.svg",
   },
   {
     id: "axa-sign",
     name: "AXA SIGN",
     tag: "/ LEGAL COMPLIANCE",
     desc: "Audit-trailed digital signatures, custom contract templates, and document lifecycle tracking.",
+    image: "/axasign.svg",
   },
   {
     id: "axa-book",
     name: "AXA BOOK",
     tag: "/ SCHEDULING",
     desc: "Intelligent calendar sync, dynamic booking links, automated reminders, and payments.",
+    image: "/axabook.svg",
   },
 ];
 
@@ -159,6 +165,19 @@ export default function AboutSection() {
                     {prod.tag}
                   </span>
                 </div>
+
+                {/* Framed SVG Graphic */}
+                <div className="relative w-full aspect-2/1 border border-[#d1d1d1] bg-white overflow-hidden mb-5 flex items-center justify-center p-2.5 shadow-2xs">
+                  <CornerBrackets className="text-black" />
+                  <Image
+                    src={prod.image}
+                    alt={prod.name}
+                    width={640}
+                    height={320}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
                 <h4 className="text-lg md:text-xl font-extrabold uppercase text-black mb-2 font-sans tracking-tight">
                   {prod.name}
                 </h4>

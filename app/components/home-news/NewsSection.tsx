@@ -1,6 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import Card, { CornerBrackets } from "../ui/card";
+import { CornerBrackets } from "../ui/card";
 
 // 4-Pixel Category Indicator
 function PixelIndicator() {
@@ -22,6 +23,7 @@ interface NewsItem {
   description: string;
   date: string;
   link: string;
+  image: string;
 }
 
 const newsData: NewsItem[] = [
@@ -34,6 +36,7 @@ const newsData: NewsItem[] = [
       "Integrated real-time collaborative docs, threaded team chat, and task tracking into a unified interface to end tab-switching fatigue.",
     date: "AUG 2026",
     link: "/our-products#axa-workspace",
+    image: "/axaworkspace.svg",
   },
   {
     id: "2",
@@ -44,6 +47,7 @@ const newsData: NewsItem[] = [
       "Tunaxa partners with leading regional scale-ups to deploy Axa CRM and Axa Sign across 150+ operational teams.",
     date: "AUG 2026",
     link: "/our-products#axa-crm",
+    image: "/axacrm.svg",
   },
   {
     id: "3",
@@ -54,6 +58,7 @@ const newsData: NewsItem[] = [
       "Enterprise-grade credential rotation and encrypted vault sharing now certified for end-to-end team protection.",
     date: "JUL 2026",
     link: "/our-products#axa-pass",
+    image: "/axapass.svg",
   },
 ];
 
@@ -99,6 +104,18 @@ export default function NewsSection() {
                 <span className="font-mono text-xs text-neutral-500 font-medium">
                   {item.date}
                 </span>
+              </div>
+
+              {/* Product SVG Graphic Frame */}
+              <div className="relative w-full aspect-2/1 border border-[#d1d1d1] bg-white overflow-hidden mb-5 flex items-center justify-center p-2.5 shadow-2xs">
+                <CornerBrackets className="text-black" />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={640}
+                  height={320}
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               {/* Title */}

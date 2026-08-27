@@ -75,7 +75,7 @@ const products = [
       "Task Management & Cloud Storage",
     ],
     link: "#axa-workspace",
-    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80",
+    image: "/axaworkspace.svg",
     alt: "Axa Workspace Preview",
   },
   {
@@ -91,7 +91,7 @@ const products = [
       "Revenue Forecasts & Analytics",
     ],
     link: "#axa-crm",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    image: "/axacrm.svg",
     alt: "Axa CRM Preview",
   },
   {
@@ -107,7 +107,7 @@ const products = [
       "Automated Credential Rotation",
     ],
     link: "#axa-pass",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+    image: "/axapass.svg",
     alt: "Axa Pass Preview",
   },
   {
@@ -123,7 +123,7 @@ const products = [
       "Custom Document Templates",
     ],
     link: "#axa-sign",
-    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80",
+    image: "/axasign.svg",
     alt: "Axa Sign Preview",
   },
   {
@@ -139,7 +139,7 @@ const products = [
       "Intake Forms & Payment Collection",
     ],
     link: "#axa-book",
-    image: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=1200&q=80",
+    image: "/axabook.svg",
     alt: "Axa Book Preview",
   },
 ];
@@ -158,7 +158,6 @@ export default function OurProductsPage() {
 
       <div className="relative z-10 max-w-360 mx-auto px-4 sm:px-6 md:px-12 pt-28 pb-20">
         
-
 
         {/* PRODUCTS LIST */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
@@ -182,6 +181,18 @@ export default function OurProductsPage() {
                     <span className="font-mono text-xs md:text-sm font-semibold tracking-wider text-[#3b82f6] uppercase">
                       {product.tag}
                     </span>
+                  </div>
+
+                  {/* Product SVG Graphic Frame */}
+                  <div className="relative w-full aspect-2/1 border border-[#d1d1d1] bg-white overflow-hidden mb-6 flex items-center justify-center p-3 shadow-2xs">
+                    <CornerBrackets className="text-black" />
+                    <Image
+                      src={product.image}
+                      alt={product.alt}
+                      width={640}
+                      height={320}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
                   {/* Product Name */}

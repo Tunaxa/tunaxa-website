@@ -47,7 +47,7 @@ function PixelIndicator() {
 
 const navLinks = [
   { name: "Services", href: "/services" },
-  { name: "Our Products", href: "/our-products" },
+  { name: "Products", href: "/our-products" },
   { name: "Work", href: "/#work" },
   { name: "About", href: "/#about" },
 ];
