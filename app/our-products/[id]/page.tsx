@@ -30,7 +30,9 @@ export default function ProductPricingPage({ params }: PageProps) {
   const [isAnnual, setIsAnnual] = useState(true); // Default to Annual for 15% discount
   const [hasCrmDiscount, setHasCrmDiscount] = useState(true); // Default preview to CRM Bundle
 
-  const otherProducts = Object.values(PRODUCTS_DATA).filter((p) => p.id !== product.id);
+  const otherProducts = Object.values(PRODUCTS_DATA).filter(
+    (p) => p.id !== product.id,
+  );
 
   return (
     <div className="min-h-screen bg-[#f7f7f7] text-[#171717] font-sans antialiased selection:bg-[#3b82f6] selection:text-white">
@@ -46,7 +48,10 @@ export default function ProductPricingPage({ params }: PageProps) {
       <div className="relative z-10 max-w-360 mx-auto px-4 sm:px-6 md:px-12 pt-28 pb-20">
         {/* BREADCRUMB & NAV BACK */}
         <div className="flex items-center gap-2 mb-8 font-mono text-xs text-neutral-500 uppercase tracking-wider">
-          <Link href="/our-products" className="hover:text-black transition-colors flex items-center gap-1.5">
+          <Link
+            href="/our-products"
+            className="hover:text-black transition-colors flex items-center gap-1.5"
+          >
             <span>←</span>
             <span>All Products</span>
           </Link>
@@ -96,9 +101,20 @@ export default function ProductPricingPage({ params }: PageProps) {
               {/* Value Proposition Pills */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {product.valueProposition.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs font-medium text-neutral-800">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2.5 text-xs font-medium text-neutral-800"
+                  >
                     <div className="w-4 h-4 shrink-0 rounded-sm bg-blue-50 border border-blue-200 flex items-center justify-center text-[#2563eb] mt-0.5">
-                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        className="w-3 h-3"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     </div>
@@ -138,7 +154,8 @@ export default function ProductPricingPage({ params }: PageProps) {
               Simple, Transparent Plans
             </h2>
             <p className="text-sm text-neutral-600 font-sans mt-2 max-w-xl mx-auto">
-              Choose the plan tailored to your team size. Scale anytime with zero hidden seat fees.
+              Choose the plan tailored to your team size. Scale anytime with
+              zero hidden seat fees.
             </p>
           </div>
 
@@ -148,7 +165,9 @@ export default function ProductPricingPage({ params }: PageProps) {
               type="button"
               onClick={() => setIsAnnual(false)}
               className={`px-5 py-2 text-xs font-mono uppercase tracking-wider font-semibold transition-all ${
-                !isAnnual ? "bg-black text-white" : "text-neutral-600 hover:text-black"
+                !isAnnual
+                  ? "bg-black text-white"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
               Monthly Billing
@@ -157,7 +176,9 @@ export default function ProductPricingPage({ params }: PageProps) {
               type="button"
               onClick={() => setIsAnnual(true)}
               className={`flex items-center gap-2 px-5 py-2 text-xs font-mono uppercase tracking-wider font-semibold transition-all ${
-                isAnnual ? "bg-black text-white" : "text-neutral-600 hover:text-black"
+                isAnnual
+                  ? "bg-black text-white"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
               <span>Annual Billing</span>
@@ -189,8 +210,10 @@ export default function ProductPricingPage({ params }: PageProps) {
                   The 8-Seat Optimization Rule:
                 </span>
                 <span className="text-amber-900">
-                  If you require 8 seats on the Team plan ($50 × 8 = $400/mo), you can upgrade to the{" "}
-                  <strong>Growth Plan</strong> to get 10 seats for just <strong>$350/mo</strong> — saving $50/mo while gaining 50,000 contacts and priority limits!
+                  If you require 8 seats on the Team plan ($50 × 8 = $400/mo),
+                  you can upgrade to the <strong>Growth Plan</strong> to get 10
+                  seats for just <strong>$350/mo</strong> — saving $50/mo while
+                  gaining 50,000 contacts and priority limits!
                 </span>
               </div>
             </div>
@@ -214,7 +237,9 @@ export default function ProductPricingPage({ params }: PageProps) {
                   Cross-Sell Banner: Unlock Axapass Enterprise Vault for 50% Off
                 </span>
                 <span className="text-blue-900">
-                  &ldquo;Protect your sales team&apos;s passwords, client credentials, and API keys. Because you own our CRM, get Axapass for just $1.50/seat.&rdquo;
+                  &ldquo;Protect your sales team&apos;s passwords, client
+                  credentials, and API keys. Because you own our CRM, get
+                  Axapass for just $1.50/seat.&rdquo;
                 </span>
               </div>
             </div>
@@ -255,7 +280,8 @@ export default function ProductPricingPage({ params }: PageProps) {
               Add-ons & Capacity Boosters
             </h3>
             <p className="text-sm text-neutral-600 font-sans mb-8">
-              Need extra power? Scale storage, contacts, and credits dynamically with no surprises.
+              Need extra power? Scale storage, contacts, and credits dynamically
+              with no surprises.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

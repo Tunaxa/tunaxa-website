@@ -11,7 +11,8 @@ import PricingCard from "../components/pricing/PricingCard";
 import CrmDiscountBanner from "../components/pricing/CrmDiscountBanner";
 
 export default function GeneralPricingPage() {
-  const [activeProductId, setActiveProductId] = useState<string>("axa-workspace");
+  const [activeProductId, setActiveProductId] =
+    useState<string>("axa-workspace");
   const [isAnnual, setIsAnnual] = useState(true);
   const [hasCrmDiscount, setHasCrmDiscount] = useState(true);
 
@@ -45,8 +46,10 @@ export default function GeneralPricingPage() {
 
           <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed">
             Market-killer standalone pricing with an automatic{" "}
-            <span className="font-semibold text-black">50% CRM Bundle discount</span> across our
-            entire productivity, security, and sales suite.
+            <span className="font-semibold text-black">
+              50% CRM Bundle discount
+            </span>{" "}
+            across our entire productivity, security, and sales suite.
           </p>
         </div>
 
@@ -57,7 +60,9 @@ export default function GeneralPricingPage() {
               type="button"
               onClick={() => setIsAnnual(false)}
               className={`px-5 py-2 text-xs font-mono uppercase tracking-wider font-semibold transition-all ${
-                !isAnnual ? "bg-black text-white" : "text-neutral-600 hover:text-black"
+                !isAnnual
+                  ? "bg-black text-white"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
               Monthly Billing
@@ -66,7 +71,9 @@ export default function GeneralPricingPage() {
               type="button"
               onClick={() => setIsAnnual(true)}
               className={`flex items-center gap-2 px-5 py-2 text-xs font-mono uppercase tracking-wider font-semibold transition-all ${
-                isAnnual ? "bg-black text-white" : "text-neutral-600 hover:text-black"
+                isAnnual
+                  ? "bg-black text-white"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
               <span>Annual Billing</span>
@@ -100,7 +107,9 @@ export default function GeneralPricingPage() {
                     : "border-[#d1d1d1] bg-neutral-100/70 hover:bg-white hover:border-neutral-400"
                 }`}
               >
-                <CornerBrackets className={isCurrent ? "text-black" : "text-neutral-300"} />
+                <CornerBrackets
+                  className={isCurrent ? "text-black" : "text-neutral-300"}
+                />
                 <span className="font-mono text-[10px] text-[#2563eb] uppercase font-bold block mb-1">
                   {prod.tag.replace("/", "")}
                 </span>
@@ -182,38 +191,74 @@ export default function GeneralPricingPage() {
               The Power of the AXA Ecosystem
             </h3>
             <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
-              When you adopt AXA CRM as your sales operating system, you unlock flat 50% savings on every
-              connected product in the stack:
+              When you adopt AXA CRM as your sales operating system, you unlock
+              flat 50% savings on every connected product in the stack:
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="border border-neutral-800 bg-neutral-900/90 p-4">
-              <span className="font-mono text-xs text-blue-400 font-bold block mb-1">AXA PASS</span>
-              <span className="text-2xl font-extrabold font-mono text-white">$1.50</span>
-              <span className="text-xs text-neutral-400 font-mono"> / seat / mo</span>
-              <p className="text-xs text-neutral-400 mt-2">~~$3.00/seat~~ (Undercuts 1Password $8.99)</p>
+              <span className="font-mono text-xs text-blue-400 font-bold block mb-1">
+                AXA PASS
+              </span>
+              <span className="text-2xl font-extrabold font-mono text-white">
+                $1.50
+              </span>
+              <span className="text-xs text-neutral-400 font-mono">
+                {" "}
+                / seat / mo
+              </span>
+              <p className="text-xs text-neutral-400 mt-2">
+                ~~$3.00/seat~~ (Undercuts 1Password $8.99)
+              </p>
             </div>
 
             <div className="border border-neutral-800 bg-neutral-900/90 p-4">
-              <span className="font-mono text-xs text-blue-400 font-bold block mb-1">AXA WORKSPACE</span>
-              <span className="text-2xl font-extrabold font-mono text-white">$30</span>
-              <span className="text-xs text-neutral-400 font-mono"> / mo (10 Seats)</span>
-              <p className="text-xs text-neutral-400 mt-2">~~$60/mo~~ (Replaces Google + Slack + Zoom)</p>
+              <span className="font-mono text-xs text-blue-400 font-bold block mb-1">
+                AXA WORKSPACE
+              </span>
+              <span className="text-2xl font-extrabold font-mono text-white">
+                $30
+              </span>
+              <span className="text-xs text-neutral-400 font-mono">
+                {" "}
+                / mo (10 Seats)
+              </span>
+              <p className="text-xs text-neutral-400 mt-2">
+                ~~$60/mo~~ (Replaces Google + Slack + Zoom)
+              </p>
             </div>
 
             <div className="border border-neutral-800 bg-neutral-900/90 p-4">
-              <span className="font-mono text-xs text-blue-400 font-bold block mb-1">AXA SIGNATURE</span>
-              <span className="text-2xl font-extrabold font-mono text-white">$40</span>
-              <span className="text-xs text-neutral-400 font-mono"> / mo (10 Seats)</span>
-              <p className="text-xs text-neutral-400 mt-2">~~$80/mo~~ (Unlimited envelopes vs DocuSign)</p>
+              <span className="font-mono text-xs text-blue-400 font-bold block mb-1">
+                AXA SIGNATURE
+              </span>
+              <span className="text-2xl font-extrabold font-mono text-white">
+                $40
+              </span>
+              <span className="text-xs text-neutral-400 font-mono">
+                {" "}
+                / mo (10 Seats)
+              </span>
+              <p className="text-xs text-neutral-400 mt-2">
+                ~~$80/mo~~ (Unlimited envelopes vs DocuSign)
+              </p>
             </div>
 
             <div className="border border-neutral-800 bg-neutral-900/90 p-4">
-              <span className="font-mono text-xs text-blue-400 font-bold block mb-1">AXA CALENDAR</span>
-              <span className="text-2xl font-extrabold font-mono text-white">$30</span>
-              <span className="text-xs text-neutral-400 font-mono"> / mo (10 Seats)</span>
-              <p className="text-xs text-neutral-400 mt-2">~~$60/mo~~ (Round-robin routing included)</p>
+              <span className="font-mono text-xs text-blue-400 font-bold block mb-1">
+                AXA CALENDAR
+              </span>
+              <span className="text-2xl font-extrabold font-mono text-white">
+                $30
+              </span>
+              <span className="text-xs text-neutral-400 font-mono">
+                {" "}
+                / mo (10 Seats)
+              </span>
+              <p className="text-xs text-neutral-400 mt-2">
+                ~~$60/mo~~ (Round-robin routing included)
+              </p>
             </div>
           </div>
         </div>

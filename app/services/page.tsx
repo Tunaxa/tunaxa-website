@@ -115,15 +115,13 @@ export default function ServicesPage() {
       <div className="relative z-10 max-w-360 mx-auto px-4 sm:px-6 md:px-12 pt-28 pb-20">
         {/* ONE PAGE-LEVEL CARD WRAPPING EVERYTHING */}
         <div className="relative border border-[#d1d1d1] bg-[#f7f7f7] shadow-xs">
-          
-
-          
+          <CornerBrackets />
 
           {/* SERVICES — static stacked content */}
           {services.map((service, idx) => (
             <div key={service.id} id={service.id} className="scroll-mt-28">
               <div className="p-8 md:p-12 lg:p-14">
-                <div className="gap-8 lg:gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                   {/* Left Column: Index, Tag, Title, Overview, CTA */}
                   <div className="lg:col-span-7 flex flex-col justify-between h-full">
                     <div>

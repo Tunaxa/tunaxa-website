@@ -122,7 +122,7 @@ export default function OurProductsPage() {
             >
               <CornerBrackets />
 
-              <div className="p-6 md:p-8 flex flex-col justify-between h-full">
+              <div className="p-6 md:p-8 flex flex-col justify-evenly h-full">
                 <div>
                   {/* Tag / Category */}
                   <div className="flex items-center gap-2.5 mb-4">
@@ -160,9 +160,13 @@ export default function OurProductsPage() {
                   </p>
 
                   {/* Price Teaser Callout */}
-                  <div className="mb-6 p-2.5 border border-[#3b82f6]/30 bg-blue-50/50 flex items-center justify-between text-xs font-mono">
-                    <span className="text-neutral-600 font-medium">Pricing:</span>
-                    <span className="font-bold text-[#2563eb]">{product.priceTeaser}</span>
+                  <div className="mb-6 p-2.5 border border-[#3b82f6]/30 bg-blue-50/50 flex flex-col items-center justify-between text-xs font-mono">
+                    <span className="text-neutral-600 font-medium">
+                      Pricing:
+                    </span>
+                    <span className="font-bold text-[#2563eb] text-center">
+                      {product.priceTeaser}
+                    </span>
                   </div>
 
                   {/* Features Card with Corner Crosses */}
@@ -172,7 +176,15 @@ export default function OurProductsPage() {
                       {product.features.map((feature, fIdx) => (
                         <div key={fIdx} className="flex items-center gap-3">
                           <div className="w-5 h-5 shrink-0 rounded-md bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[#2563eb]">
-                            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg
+                              className="w-3.5 h-3.5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
                           </div>
@@ -191,12 +203,21 @@ export default function OurProductsPage() {
                     href={product.link}
                     className="group relative inline-flex items-center justify-between gap-4 px-6 py-3.5 border border-black bg-black text-white text-sm font-medium transition-all duration-200 hover:bg-neutral-800 w-full"
                     style={{
-                      clipPath: "polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px)",
+                      clipPath:
+                        "polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px)",
                     }}
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 relative shrink-0 text-[#3b82f6] group-hover:text-white transition-colors duration-200 flex items-center justify-center">
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg
+                          className="w-4 h-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
                           <path d="M5 12h14" />
                           <path d="m12 5 7 7-7 7" />
                         </svg>
