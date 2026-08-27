@@ -2,18 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CornerBrackets } from "../ui/card";
-
-// 4-Pixel Category Indicator
-function PixelIndicator() {
-  return (
-    <div className="grid grid-cols-2 gap-0.5 w-3 h-3 shrink-0">
-      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-100 animate-pulse" />
-      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-30" />
-      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-60" />
-      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-90" />
-    </div>
-  );
-}
+import PixelIndicator from "../ui/PixelIndicator";
 
 const products = [
   {
@@ -55,7 +44,7 @@ const products = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="w-full space-y-12">
+    <section id="about" className="w-full space-y-12 text-black scroll-mt-28">
       {/* Purpose & Vision Header */}
       <div className="border-b border-[#d1d1d1] pb-6">
         <div className="flex items-center gap-2.5 mb-2">

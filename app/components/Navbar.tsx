@@ -4,52 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-// Corner Cross Decorator Component matching our-products
-function CornerBrackets({ className = "text-black" }: { className?: string }) {
-  return (
-    <>
-      {/* Top Left */}
-      <div className={`absolute top-0 left-0 w-3 h-3 pointer-events-none z-10 ${className}`}>
-        <div className="absolute top-0 left-0 w-3 h-[1.5px] bg-current" />
-        <div className="absolute top-0 left-0 w-[1.5px] h-3 bg-current" />
-      </div>
-      {/* Top Right */}
-      <div className={`absolute top-0 right-0 w-3 h-3 pointer-events-none z-10 ${className}`}>
-        <div className="absolute top-0 right-0 w-3 h-[1.5px] bg-current" />
-        <div className="absolute top-0 right-0 w-[1.5px] h-3 bg-current" />
-      </div>
-      {/* Bottom Right */}
-      <div className={`absolute bottom-0 right-0 w-3 h-3 pointer-events-none z-10 ${className}`}>
-        <div className="absolute bottom-0 right-0 w-3 h-[1.5px] bg-current" />
-        <div className="absolute bottom-0 right-0 w-[1.5px] h-3 bg-current" />
-      </div>
-      {/* Bottom Left */}
-      <div className={`absolute bottom-0 left-0 w-3 h-3 pointer-events-none z-10 ${className}`}>
-        <div className="absolute bottom-0 left-0 w-3 h-[1.5px] bg-current" />
-        <div className="absolute bottom-0 left-0 w-[1.5px] h-3 bg-current" />
-      </div>
-    </>
-  );
-}
-
-// 4-Pixel Category Indicator
-function PixelIndicator() {
-  return (
-    <div className="grid grid-cols-2 gap-0.5 w-3 h-3 shrink-0">
-      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-100 animate-pulse" />
-      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-30" />
-      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-60" />
-      <span className="w-1.5 h-1.5 bg-[#3b82f6] opacity-90" />
-    </div>
-  );
-}
+import { CornerBrackets } from "./ui/card";
+import PixelIndicator from "./ui/PixelIndicator";
 
 const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Products", href: "/our-products" },
-  { name: "Work", href: "/#work" },
-  { name: "About", href: "/#about" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Navbar() {

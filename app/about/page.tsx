@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import NewsSection from "./components/home-news/NewsSection";
-import PixelDivider from "./components/ui/PixelDivider";
-import Footer from "./components/Footer";
+import AboutSection from "../components/about/about";
+import Footer from "../components/Footer";
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#f7f7f7] text-[#171717] font-sans antialiased selection:bg-[#3b82f6] selection:text-white">
       {/* Background Subtle Grid Texture */}
@@ -18,11 +17,7 @@ export default function Home() {
       />
 
       <div className="relative z-10 max-w-360 mx-auto px-4 sm:px-6 md:px-12 pt-28 pb-20 space-y-16">
-        {/* 1. NEWS / DISPATCH SECTION */}
-        <NewsSection />
-
-        {/* Technical Divider */}
-        <PixelDivider />
+        <AboutSection />
 
         {/* FOOTER SECTION */}
         <Footer />
