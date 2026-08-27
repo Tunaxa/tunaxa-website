@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import HeroSection from "./components/HeroSection";
 import NewsSection from "./components/home-news/NewsSection";
 import PixelDivider from "./components/ui/PixelDivider";
 import Footer from "./components/Footer";
@@ -18,11 +19,14 @@ export default function Home() {
       />
 
       <div className="relative z-10 max-w-360 mx-auto px-4 sm:px-6 md:px-12 pt-28 pb-20 space-y-16">
-        {/* 1. NEWS / DISPATCH SECTION */}
-        <NewsSection />
+        {/* 1. HERO SECTION */}
+        <HeroSection />
 
         {/* Technical Divider */}
         <PixelDivider />
+
+        {/* 2. NEWS / DISPATCH SECTION */}
+        <NewsSection />
 
         {/* FOOTER SECTION */}
         <Footer />

@@ -25,10 +25,7 @@ export default function Navbar() {
         <nav className="px-4 py-3 sm:px-6 sm:py-3.5">
           <div className="flex items-center justify-evenly">
             {/* Brand / Logo */}
-            <Link
-              href="/"
-              className="group flex items-center gap-3 font-sans"
-            >
+            <Link href="/" className="group flex items-center gap-3 font-sans">
               <div className=" flex items-center justify-center p-1.5 transition-colors">
                 <Image
                   src="/black-logo.png"
@@ -51,14 +48,26 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`group relative flex items-center gap-1.5 py-1 font-medium transition-colors ${
+                    className={`group relative flex items-center py-1 font-medium transition-colors ${
                       isActive
                         ? "text-black font-bold"
                         : "text-neutral-600 hover:text-black"
                     }`}
                   >
-                    {isActive && <PixelIndicator />}
+                    {/* Pixel Indicator with Hover Slide-in Effect */}
+                    <span
+                      className={`overflow-hidden transition-all duration-200 flex items-center ${
+                        isActive
+                          ? "w-4 opacity-100 mr-1"
+                          : "w-0 opacity-0 group-hover:w-4 group-hover:opacity-100 group-hover:mr-1"
+                      }`}
+                    >
+                      <PixelIndicator />
+                    </span>
+
                     <span>{link.name}</span>
+
+                    {/* Bottom Blue Active/Hover Line */}
                     <span
                       className={`absolute bottom-0 left-0 h-0.5 bg-[#3b82f6] transition-all duration-200 ${
                         isActive ? "w-full" : "w-0 group-hover:w-full"
@@ -176,5 +185,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-
