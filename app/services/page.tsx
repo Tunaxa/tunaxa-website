@@ -21,7 +21,7 @@ const services = [
       "Scalable cloud hosting setup and maintenance",
     ],
     cta: "Start Web Project",
-    link: "/#contact",
+    link: "/contact",
   },
   {
     id: "mobile-development",
@@ -36,7 +36,7 @@ const services = [
       "App Store and Google Play deployment management",
     ],
     cta: "Build Mobile App",
-    link: "/#contact",
+    link: "/contact",
   },
   {
     id: "api-integration",
@@ -51,7 +51,7 @@ const services = [
       "Backend optimization and legacy migration",
     ],
     cta: "Connect Systems",
-    link: "/#contact",
+    link: "/contact",
   },
   {
     id: "web-scraping",
@@ -66,7 +66,7 @@ const services = [
       "Real-time monitoring and data pipelines",
     ],
     cta: "Extract Web Data",
-    link: "/#contact",
+    link: "/contact",
   },
   {
     id: "sales-outsourcing",
@@ -81,7 +81,7 @@ const services = [
       "Ongoing commission-based or retainer management setups",
     ],
     cta: "Scale Sales Team",
-    link: "/#contact",
+    link: "/contact",
   },
   {
     id: "growth-marketing",
@@ -96,7 +96,7 @@ const services = [
       "Brand positioning and content strategy",
     ],
     cta: "Drive Growth",
-    link: "/#contact",
+    link: "/contact",
   },
 ];
 

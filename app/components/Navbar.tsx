@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Products", href: "/our-products" },
   { name: "Pricing", href: "/pricing" },
   { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -82,7 +83,7 @@ export default function Navbar() {
             {/* CTA Button */}
             <div className="hidden md:flex items-center">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="group relative inline-flex items-center justify-between gap-3 px-5 py-2.5 border border-black bg-transparent text-black text-xs font-mono font-medium uppercase tracking-wider transition-all duration-200 hover:bg-black hover:text-white"
                 style={{
                   clipPath:
@@ -162,7 +163,7 @@ export default function Navbar() {
 
               <div className="pt-2">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   onClick={() => setIsOpen(false)}
                   className="group relative flex items-center justify-between px-5 py-3 border border-black bg-transparent text-black text-xs font-mono font-medium uppercase tracking-wider transition-all duration-200 hover:bg-black hover:text-white w-full"
                   style={{

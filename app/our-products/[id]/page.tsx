@@ -218,7 +218,7 @@ export default function ProductPricingPage({ params }: PageProps) {
               </div>
             </div>
             <Link
-              href="/#contact"
+              href="/contact"
               className="shrink-0 px-4 py-2 border border-amber-900 bg-amber-950 text-white font-mono text-xs uppercase tracking-wider hover:bg-black transition-colors"
             >
               Upgrade to Growth ($350/mo)
@@ -244,7 +244,7 @@ export default function ProductPricingPage({ params }: PageProps) {
               </div>
             </div>
             <Link
-              href="/#contact"
+              href="/contact"
               className="shrink-0 px-4 py-2 border border-[#2563eb] bg-[#2563eb] text-white font-mono text-xs uppercase tracking-wider hover:bg-blue-700 transition-colors"
             >
               Activate Axapass Upgrade
@@ -304,7 +304,7 @@ export default function ProductPricingPage({ params }: PageProps) {
                     </p>
                   </div>
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="mt-5 w-full py-2 border border-neutral-300 bg-white font-mono text-xs font-semibold text-black uppercase hover:bg-black hover:text-white transition-colors text-center block"
                   >
                     Inquire Add-on

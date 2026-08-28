@@ -149,7 +149,7 @@ export default function PricingCard({
       {/* Action Link to Contact */}
       <div className="pt-2">
         <Link
-          href="/#contact"
+          href="/contact"
           className={`w-full group relative inline-flex items-center justify-between gap-4 px-6 py-3.5 border text-sm font-mono uppercase tracking-wider font-semibold transition-all duration-200 ${
             tier.isPopular
               ? "border-black bg-black text-white hover:bg-neutral-800"
