@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Social Buttons */}
           <div className="flex items-center gap-3 pt-4">
             <a
-              href="https://www.linkedin.com/company/evolt-dev/"
+              href="https://www.linkedin.com/company/tunaxa/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -34,45 +34,15 @@ export default function Footer() {
             >
               <CornerBrackets className="text-black" />
               <Image
-                src="https://framerusercontent.com/images/ptjHZfR22qLY0nuPLyhE25pOyGQ.png"
+                src="https://img.magnific.com/premium-vector/square-linkedin-logo-isolated-white-background_469489-892.jpg?semt=ais_hybrid&w=740&q=80"
                 alt="LinkedIn"
                 width={22}
                 height={22}
                 className="object-contain"
               />
             </a>
-            <a
-              href="https://x.com/evolt123"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X / Twitter"
-              className="relative w-11 h-11 border border-[#d1d1d1] bg-white flex items-center justify-center p-2.5 transition-colors hover:bg-neutral-100"
-            >
-              <CornerBrackets className="text-black" />
-              <Image
-                src="https://framerusercontent.com/images/byNhsqDwWzetQTwsPI11zx7A.png"
-                alt="X"
-                width={22}
-                height={22}
-                className="object-contain"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/evoltdev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="relative w-11 h-11 border border-[#d1d1d1] bg-white flex items-center justify-center p-2.5 transition-colors hover:bg-neutral-100"
-            >
-              <CornerBrackets className="text-black" />
-              <Image
-                src="https://framerusercontent.com/images/gRcM0sXhNZOtvdIIIfURMEnIE.png"
-                alt="Instagram"
-                width={22}
-                height={22}
-                className="object-contain"
-              />
-            </a>
+            
+
           </div>
         </div>
 
